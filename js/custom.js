@@ -179,16 +179,21 @@ Assigned to: ThemeForest
 	});
 	
 	// Portfolio video Popup js
-	$('a.popup-youtube').magnificPopup({
-		disableOn: 0,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
-		preloader: false,
-
-		fixedContentPos: false
-	});
-	
+	$('.popup-youtube').magnificPopup({
+	    type: 'iframe',
+	    iframe: {
+	        patterns: {
+	            youtube: {
+	                index: 'youtube.com/', 
+	                // This tells the script to find the ID after 'v='
+	                id: 'v=', 
+	                // This builds the clean URL
+	                src: 'https://www.youtube.com/embed/%id%?autoplay=1&rel=0' 
+ 	           }
+	        },
+	        srcAction: 'iframe_src', 
+	    }
+	});	
 	// Service Page Image Slides Js
 	$('div.prt_img_click').on('click' , function(){
 		if(!$(this).hasClass('active')){
