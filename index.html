@@ -169,7 +169,7 @@
 										<div class="prt_about_experience_info">
 											<h4>Freelance Quality Checker</h4>
 											<span>Prime Focus Technologies</span>
-											<p>Mastering professional broadcasting video projects within the QC team.</p>
+											<p>Mastering more than 20+ broadcasting video projects within the QC team.</p>
 										</div>
 									</div>
 								</div>
@@ -225,22 +225,101 @@
 							<div class="prt_contact_form">
 								<div class="row">
 									<div class="col-12">
-										<form>
-											<div class="row">
-												<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-													<input type="text" name="first_name" placeholder="Your Name" class="require">
-												</div>
-												<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-													<input type="text" name="email" placeholder="Your Email" class="require">
-												</div>
-												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-													<textarea rows="4" name="message" placeholder="Message" class="require"></textarea>
-												</div>
-												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-													<button type="button" class="prt_btn">submit</button>
-												</div>
-											</div>
+										<div data-fs-success style="display: none; padding: 1rem; background: #2ecc71; color: #111; margin-bottom: 1rem; border-radius: 4px;">
+										  Thank you! Your creative request has been submitted successfully.
+										</div>
+										<div data-fs-error style="display: none; padding: 1rem; background: #e74c3c; color: #fff; margin-bottom: 1rem; border-radius: 4px;">
+										  There was a problem submitting your form. Please check the fields below.
+										</div>
+
+										<form id="creative-request-form" style="background: #111; padding: 2rem; color: #fff; max-width: 800px; margin: 0 auto; font-family: sans-serif;">
+										  <h2 style="text-align: center; border-bottom: 2px solid #ff5252; padding-bottom: 10px; margin-bottom: 2rem;"></h2>
+
+										  <h3 style="color: #ff5252; margin-bottom: 1rem;">Requester Information</h3>
+										  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+										    <div>
+										      <label for="name" style="display: block; margin-bottom: 0.5rem;">Requestor Name*</label>
+										      <input type="text" id="name" name="name" data-fs-field style="width: 100%; padding: 0.8rem; background: #222; border: 1px solid #333; color: #fff; box-sizing: border-box;" required />
+										      <span data-fs-error="name" style="color: #ff5252; font-size: 0.8rem;"></span>
+										    </div>
+										    <div>
+										      <label for="department" style="display: block; margin-bottom: 0.5rem;">Department / Team</label>
+										      <input type="text" id="department" name="department" data-fs-field style="width: 100%; padding: 0.8rem; background: #222; border: 1px solid #333; color: #fff; box-sizing: border-box;" />
+										    </div>
+										    <div>
+										      <label for="email" style="display: block; margin-bottom: 0.5rem;">Email Address*</label>
+										      <input type="email" id="email" name="email" data-fs-field style="width: 100%; padding: 0.8rem; background: #222; border: 1px solid #333; color: #fff; box-sizing: border-box;" required />
+										      <span data-fs-error="email" style="color: #ff5252; font-size: 0.8rem;"></span>
+										    </div>
+										    <div>
+										      <label for="phone" style="display: block; margin-bottom: 0.5rem;">Phone Number</label>
+										      <input type="tel" id="phone" name="phone" data-fs-field style="width: 100%; padding: 0.8rem; background: #222; border: 1px solid #333; color: #fff; box-sizing: border-box;" />
+										    </div>
+										    <div>
+										      <label for="date" style="display: block; margin-bottom: 0.5rem;">Date of Request</label>
+										      <input type="date" id="date" name="date" data-fs-field style="width: 100%; padding: 0.8rem; background: #222; border: 1px solid #333; color: #fff; box-sizing: border-box;" />
+										    </div>
+										</div>
+
+										  <h3 style="color: #ff5252; margin-bottom: 1rem;">Project Details</h3>
+										<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+										    <div>
+										      <label for="projectName" style="display: block; margin-bottom: 0.5rem;">Project Name / Campaign Title*</label>
+										      <input type="text" id="projectName" name="projectName" data-fs-field style="width: 100%; padding: 0.8rem; background: #222; border: 1px solid #333; color: #fff; box-sizing: border-box;" required />
+										    </div>
+										    <div>
+										      <label for="creativeType" style="display: block; margin-bottom: 0.5rem;">Type of Creative Work</label>
+										      <select id="creativeType" name="creativeType" data-fs-field style="width: 100%; padding: 0.8rem; background: #222; border: 1px solid #333; color: #fff; box-sizing: border-box;">
+										        <option value="Graphic Design">Graphic Design</option>
+										        <option value="Video Production">Video Production</option>
+										        <option value="Event Videography">Event Videography</option>
+												<option value="Event Photography">Event Photography</option>
+										        <option value="Other">Other</option>
+										      </select>
+										    </div>
+										</div>
+
+										  <div style="margin-bottom: 1.5rem;">
+										    <label for="description" style="display: block; margin-bottom: 0.5rem;">Description of the Project*</label>
+										    <textarea id="description" name="description" data-fs-field style="width: 100%; padding: 0.8rem; background: #222; border: 1px solid #333; color: #fff; min-height: 100px; box-sizing: border-box;" required></textarea>
+										    <span data-fs-error="description" style="color: #ff5252; font-size: 0.8rem;"></span>
+										  </div>
+
+										  <div style="margin-bottom: 2rem;">
+										    <label style="display: block; margin-bottom: 0.8rem; font-weight: bold;">Deliverables Requested</label>
+										    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+										      <label style="cursor: pointer;"><input type="checkbox" name="deliverables" value="Social Media Posts" /> Social Media Posts</label>
+										      <label style="cursor: pointer;"><input type="checkbox" name="deliverables" value="Photo Album" /> Photo Album</label>
+										      <label style="cursor: pointer;"><input type="checkbox" name="deliverables" value="Photoshoot" /> Photoshoot</label>
+										      <label style="cursor: pointer;"><input type="checkbox" name="deliverables" value="Landing Pages" /> Landing Pages</label>
+										    </div>
+										  </div>
+
+										  <h3 style="color: #ff5252; margin-bottom: 1rem;">Approvals and Follow-Up</h3>
+										  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+										    <div>
+										      <label for="approver" style="display: block; margin-bottom: 0.5rem;">Approval Required From</label>
+										      <input type="text" id="approver" name="approver" data-fs-field style="width: 100%; padding: 0.8rem; background: #222; border: 1px solid #333; color: #fff; box-sizing: border-box;" />
+										    </div>
+										    <div>
+										      <label for="notes" style="display: block; margin-bottom: 0.5rem;">Additional Notes</label>
+										      <input type="text" id="notes" name="notes" data-fs-field style="width: 100%; padding: 0.8rem; background: #222; border: 1px solid #333; color: #fff; box-sizing: border-box;" />
+										    </div>
+										  </div>
+
+										  <div style="text-align: right;">
+										    <button type="submit" data-fs-submit-btn style="background: #ff5252; color: #fff; font-weight: bold; border: none; padding: 1rem 3rem; cursor: pointer; border-radius: 4px; transition: opacity 0.3s;">
+										      SUBMIT REQUEST
+										    </button>
+										  </div>
 										</form>
+
+										<script>
+										  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+										  // Initializes the form using your endpoint ID
+										  formspree('initForm', { formElement: '#creative-request-form', formId: 'mzdykzan' });
+										</script>
+										<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 									</div>
 								</div>
 							</div>
@@ -305,25 +384,25 @@
 								<div class="col-lg-6 col-md-12">
 									<div class="prt_services_slider_text">
 										<h4>Video Ads & Reels</h4>
-										<p>High-conversion short-form content. Starting at $40 / ₹3.5k.</p>
+										<p>High-conversion short-form content. Starting at ₹3.5k / $40.</p>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-12">
 									<div class="prt_services_slider_text">
 										<h4>Long Form / YouTube</h4>
-										<p>Full-scale storytelling & educational edits. Starting at $150 / ₹12k.</p>
+										<p>Full-scale storytelling & educational edits. Starting at ₹12k / $150.</p>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-12">
 									<div class="prt_services_slider_text">
 										<h4>Event Photography & Video</h4>
-										<p>Cinematic coverage for weddings & events. Day rates from $150 / ₹10k.</p>
+										<p>Cinematic coverage for weddings & events. Day rates starting from ₹10k / $150.</p>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-12">
 									<div class="prt_services_slider_text">
 										<h4>Creative Retainer</h4>
-										<p>Dedicated monthly support for your brand. Plans from $500 / ₹40k.</p>
+										<p>Dedicated monthly support for your brand. Plans starting from ₹40k / $500.</p>
 									</div>
 								</div>
 							</div>
